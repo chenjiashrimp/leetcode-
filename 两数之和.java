@@ -21,3 +21,15 @@ class Solution {
     }
 }
 
+public class Solution {
+    public int[] twoSums(int[] nums,int target){
+        Map<Integer,Integer> hashtable=new HashMap<Integer,Integer>();//是把值当作key噢，这样才方便搜索
+        for(int i=0;i<nums.length;i++){
+            if(hashtable.containsKey(target-nums[i])){
+                return new int[]{hashtable.get(target-nums[i],i)};//顺序
+            }
+            hashtable.put(nums[i],i);//防止抽到自己，最后在加入
+        }
+        return new int[0];
+    }
+}
