@@ -15,3 +15,17 @@ class Solution {//
         return num;
     }
 }
+
+
+
+class Solution {//汉明距离，一样的解法
+    public int hammingDistance(int x, int y) {
+        int num=x^y;
+        int count=0;
+        while(num>0){
+            num&=num-1;
+            count++;
+        }
+        return count;
+    }
+}
