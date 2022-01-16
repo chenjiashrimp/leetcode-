@@ -1,0 +1,12 @@
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if(root==null||(root.left==null&&root.right==null)){
+            return root;//注意return null的情况，度数为1的不能直接return，因为null也要在序列种体现出来
+        }
+        TreeNode rootleft=root.left;
+        TreeNode rootright=root.right;
+        root.left=invertTree(rootright);
+        root.right=invertTree(rootleft);//易错点，right需要的是反转前的左树，但是我一开始没有定义新变量直接把左子树反转了
+        return root;
+    }
+}
