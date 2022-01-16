@@ -33,3 +33,12 @@ public class Solution {
         return new int[0];
     }
 }
+
+//hash
+//.containsKey()
+//.get(key)
+//.size()
+//迭代 .keySet() .values()
+//for(:.keySet())
+//.clear()清除所有
+//.remove(key)移除
