@@ -1,6 +1,6 @@
 class Solution {
     public boolean isValid(String s) {
-         int n=s.length();
+         int n=s.length();//注意，不同于数组的长度函数
         if(n%2==1){//提前判断
             return false;
         }
