@@ -1,9 +1,9 @@
 class MinStack {//利用辅助栈
     Deque<Integer> xStack;
-    Deque<Integer> minStack;
+    Deque<Integer> minStack;//这里不要初始化，在构造函数里初始化
     public MinStack() {
         xStack=new LinkedList<Integer>();
-        minStack=new LinkedList<Integer>();
+        minStack=new LinkedList<Integer>();不要等于null
         minStack.push(Integer.MAX_VALUE);
     }
     
