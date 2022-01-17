@@ -35,12 +35,12 @@
 
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {//第一次根的访问是特殊的，单独列出来
-        List<Integer> res=new ArrayList<Integer>();
+        List<Integer> res=new ArrayList<Integer>();//因为要存在一个列表里，所以不能是局部变量
         inorder(root,res);
         return res;
     }
     public void inorder(TreeNode root, List<Integer> res){//使用递归，注意数据类型带<>
-        if(root==null){
+        if(root==null){//本质是递归，记得边界条件
             return;
         }
         inorder(root.left,res);
