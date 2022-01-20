@@ -22,3 +22,11 @@ class Solution {//递归搞定
         return sets;
     }
 }
+//ArrayList的构造函数总共有三个：
+
+//（1）ArrayList()构造一个初始容量为 10 的空列表。
+List<String> list1 = new ArrayList<>();
+//（2）ArrayList(int initialCapacity)构造一个具有指定初始容量的空列表。
+List<String> list2 = new ArrayList<>(6);
+//（3）ArrayList(Collection<? extends E> c)构造一个包含指定 collection 的元素的列表，这些元素是按照该 collection 的迭代器返回它们的顺序排列的。
+List<String> list3 = new ArrayList<>(list2);
