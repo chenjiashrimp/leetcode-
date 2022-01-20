@@ -18,5 +18,6 @@ class Solution {//这题方法挺笨，但是一些写法要注意
             }
         }
         return merged.toArray(new int[merged.size()][]);//一定要注意数据类型，尤其是引用类型转化为基本类型
+        //ArrayList的method，括号里是用于储存元素的数组，所以不是ArrayList本身变了，而是它把数据传给一个新的二维数组
     }
 }
