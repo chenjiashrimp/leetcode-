@@ -10,6 +10,7 @@ class Solution {//动态规划，但是状态转移方程不好想
                     f[i][j]=f[i][j-2];
                     if(match(s,p,i,j-1)){
                         f[i][j]=f[i][j]||f[i-1][j];//这一步特别难想，我暂时找不到切入口
+                        //可以理解为递归中的递归？
                     }
                 }else{
                     if(match(s,p,i,j)){
