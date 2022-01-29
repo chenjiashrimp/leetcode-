@@ -19,3 +19,24 @@ class Solution {//动态规划，每个结点要么选要么不选
       //这个式子巧妙运用了条件，只能有左子树或者右子树
     }
 }
+
+
+class Solution {//打家劫舍Ⅰ，数组线性的更简单
+    public int rob(int[] nums) {
+        int n=nums.length;
+        if(n==0){
+            return 0;
+        }
+        if(n==1){
+            return nums[0];
+        }
+        int[] f=new int[n];
+        int[] g=new int[n];
+        f[n-1]=nums[n-1];
+        for(int i=n-2;i>=0;i--){
+            f[i]=g[i+1]+nums[i];
+            g[i]=Math.max(g[i+1],f[i+1]);
+        }
+        return Math.max(f[0],g[0]);
+    }
+}
