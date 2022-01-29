@@ -23,3 +23,28 @@ class Solution {//01背包问题，题解和我思路一样
         return f[n][neg];
     }
 }
+
+
+class Solution {
+    public int findTargetSumWays(int[] nums, int target) {
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+        }
+        int diff = sum - target;
+        if (diff < 0 || diff % 2 != 0) {
+            return 0;
+        }
+        int neg = diff / 2;
+        int[] dp = new int[neg + 1];
+        dp[0] = 1;
+        for (int num : nums) {
+            for (int j = neg; j >= num; j--) {
+                dp[j] += dp[j - num];
+            }
+        }
+        return dp[neg];
+    }
+}//优化
+//由于 \textit{dp}dp 的每一行的计算只和上一行有关，因此可以使用滚动数组的方式，去掉 \textit{dp}dp 的第一个维度，将空间复杂度优化到 O(\textit{neg})O(neg)。
+//实现时，内层循环需采用倒序遍历的方式，这种方式保证转移来的是 \textit{dp}[i-1][]dp[i−1][] 中的元素值。
