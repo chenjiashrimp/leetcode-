@@ -31,3 +31,24 @@ class Solution {//柱状图暴力法
         return ret;
     }
 }
+
+//柱状图最大矩形
+class Solution {
+    public int largestRectangleArea(int[] heights) {
+        int ret=0;
+        int n=heights.length;
+        for(int i=0;i<n;i++){
+            int height=heights[i];
+            int area=heights[i];
+            for(int k=i;k<n;k++){
+                height=Math.min(height,heights[k]);
+                area=Math.max(area,height*(k-i+1));
+                if(height*(n-i)<ret){//没有这个优化会超时
+                    break;
+                }
+            }
+            ret=Math.max(ret,area);
+        }
+        return ret;
+    }
+}
