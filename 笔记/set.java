@@ -1,2 +1,3 @@
 //set HashSet
-//.add() .remove()
+//.add() .remove(value)而不是下标
+//.contains()
